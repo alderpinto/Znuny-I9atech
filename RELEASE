@@ -1,0 +1,5 @@
+PRODUCT = I9atech
+VERSION = 6.5.9
+BUILDDATE = Wed Jun 26 09:18:07 CEST 2024
+BUILDHOST = ci-runner-01.znuny.com
+COMMIT_ID = 7294284f1fa41bafb9d9aaa0ed64ff9fc0f605ed

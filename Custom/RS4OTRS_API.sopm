@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_package version="1.0">
+    <Name>RS4OTRS_API</Name>
+    <Version>6.5.1</Version>
+    <Framework>6.5.x</Framework>
+    <Vendor>Radiant System</Vendor>
+    <URL>https://radiantsystem.com</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">API for common functionality of ((OTRS)) Community Edition.</Description>
+    <Description Lang="ru">API для общего функционала ((OTRS)) Community Edition.</Description>
+    <ChangeLog Version="6.5.1" Date="2024-05-08 14:12:08 -0300">Initial release for Znuny 6.5.</ChangeLog>
+    <Filelist>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Queues.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Customers.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Services.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Tickets.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Users.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Filters.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/System.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Settings.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Modules/API/Sla.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/Ticket/Event/CheckInstalledPackage.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Queue.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Setting.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Util.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Service.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Filter.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/SLA.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/System.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Customer.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/Ticket.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/API/User.pm"/>
+        <File Permission="660" Location="Custom/Kernel/System/Web/InterfaceAgentJSON.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Language.pm"/>
+        <File Permission="660" Location="Custom/Kernel/Output/HTML/ZZZLayout_ChallengeTokenCheck.pm"/>
+        <File Permission="660" Location="scripts/test/RS_API/Requests.t"/>
+        <File Permission="660" Location="bin/cgi-bin/json.pl"/>
+        <File Permission="660" Location="var/packagesetup/RS4OTRS_API.pm"/>
+        <File Permission="660" Location="Kernel/Autoload/RS_TicketSearch.pm"/>
+        <File Permission="660" Location="Kernel/Config/Files/XML/API.xml"/>
+    </Filelist>
+    <CodeInstall Type="post"><![CDATA[
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}{Name}{Content};
+        $Kernel::OM->Get($CodeModule)->CodeInstall();
+    ]]></CodeInstall>
+    <CodeUpgrade Type="pre"><![CDATA[
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}{Name}{Content};
+        $Kernel::OM->Get($CodeModule)->CodeUpgrade();
+    ]]></CodeUpgrade>
+    <CodeUninstall Type="pre"><![CDATA[
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}{Name}{Content};
+        $Kernel::OM->Get($CodeModule)->CodeUninstall();
+    ]]></CodeUninstall>
+    <CodeReinstall Type="pre"><![CDATA[
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}{Name}{Content};
+        $Kernel::OM->Get($CodeModule)->CodeReinstall();
+    ]]></CodeReinstall>
+    <IntroInstall Type="pre" Title="Installation Information" Lang="en"><![CDATA[
+        <br/>
+        You are about to install "RS4OTRS_API" module.
+        <br/>
+    ]]></IntroInstall>
+    <IntroInstall Type="post" Title="Install information" Lang="en"><![CDATA[
+        <br/>
+        Thank you for choosing the "RS4OTRS_API" module.<br/>
+        <br/>
+        Attention! Minimum requirements for mobile applications:<br/>
+        Radiant Mobile Agent v1.5 — for Android<br/>
+        Radiant Mobile Agent v1.5 — for iOS<br/>
+        <br/>
+        For install completion in the file zzz_otrs.conf inside section <Location /otrs> you should write:<br/>
+        <br/>
+        RewriteEngine on<br/>
+        RewriteRule "/api/(\w+)/(\w+)" "/otrs/json.pl?Action=$1&Subaction=$2" [QSA,L]<br/>
+        <br/>
+        and restart Apache.<br/>
+        <br/>
+        Most Apache installations have a conf.d directory included. On Linux systems you can usually find this directory under /etc/apache or /etc/apache2. Log in as root, change to the conf.d directory and link the appropriate template in /opt/otrs/scripts/apache2-httpd.include.conf to a file called zzz_otrs.conf in the Apache configuration directory (to make sure it is loaded after the other configurations). https://doc.radiantsd.com/doc/manual/admin/stable/en/html/manual-installation-of-otrs.html
+    ]]></IntroInstall>
+    <IntroInstall Type="pre" Title="Информация по установке" Lang="ru"><![CDATA[
+        <br/>
+        Вы собираетесь установить модуль "RS4OTRS_API"
+    ]]></IntroInstall>
+    <IntroInstall Type="post" Title="Информация по установке" Lang="ru"><![CDATA[
+        <br/>
+        Спасибо за Ваш выбор модуля RS4OTRS_API.<br/>
+        <br/>
+        Внимание! Минимальные требования для мобильных приложений:<br/>
+        Radiant Mobile Agent v1.5 — для Android<br/>
+        Radiant Mobile Agent v1.5 — для iOS<br/>
+        <br/>
+        Для завершения установки в файле zzz_otrs.conf в разделе <Location /otrs> необходимо прописать:<br/>
+        <br/>
+        RewriteEngine on<br/>
+        RewriteRule "/api/(\w+)/(\w+)" "/otrs/json.pl?Action=$1&Subaction=$2" [QSA,L]<br/>
+        <br/>
+        и выполнить перезапуск (restart) Apache.<br/>
+        <br/>
+        В большинстве случаев при установке Apache есть каталог conf.d. В системах Linux можно найти этот каталог в /etc/apache или /etc/apache2. Войдите в систему с правами root, перейдите в каталог conf.d и свяжите соответствующий шаблон в /opt/otrs/scripts/apache2-httpd.include.conf с файлом zzz_otrs.conf в каталоге конфигурации Apache (чтобы убедиться, что он загружается после других конфигураций). https://doc.radiantsd.com/doc/manual/admin/stable/en/html/manual-installation-of-otrs.html
+    ]]></IntroInstall>
+</otrs_package>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Application">
+
+    <Setting Name="Frontend::Module###API::Tickets" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+<!--
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+-->
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Settings" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::System" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Filters" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Queues" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Services" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Customers" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Sla" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###API::Users" Required="1" Valid="1">
+        <Description Translatable="1">Module.</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Description" Translatable="1">Module registration</Item>
+                    <Item Key="NavBarName">Module</Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::API::StripTicketNumberFromArticleSubject" Required="1" Valid="1">
+        <Description Translatable="1">Strip [Ticket#Number] from article Subject in /getArticles</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Item ValueType="Select" SelectedID="1">
+                <Item ValueType="Option" Value="0" Translatable="1">No</Item>
+                <Item ValueType="Option" Value="1" Translatable="1">Yes</Item>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Ticket::CustomModule###ZZZLayout_ChallengeTokenCheck" Required="0" Valid="1">
+        <Description Translatable="1">Redefines existing functions in Kernel::Output::HTML::Layout.</Description>
+        <Navigation>Core::Ticket</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">Kernel::Output::HTML::ZZZLayout_ChallengeTokenCheck</Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::API::DefaultState" Required="0" Valid="1">
+        <Description Translatable="1">Defalt ticket state when creating a ticket.</Description>
+        <Navigation>RS_API::State</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="">new</Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::API::ObjectType###Number" Required="0" Valid="1">
+        <Description Translatable="1">Type of object fields.</Description>
+        <Navigation>RS_API::Internal</Navigation>
+        <Value>
+              <Array>
+                  <Item>Accessible</Item>
+                  <Item>AdminCommunicationLogPageShown</Item>
+                  <Item>AdminDynamicFieldsOverviewPageShown</Item>
+                  <Item>Age</Item>
+                  <Item>ArticleID</Item>
+                  <Item>ArticleNumber</Item>
+                  <Item>ChangeBy</Item>
+                  <Item>CommunicationChannelID</Item>
+                  <Item>Count</Item>
+                  <Item>CreateBy</Item>
+                  <Item>CreateTimeUnix</Item>
+                  <Item>Default</Item>
+                  <Item>EscalationDestinationTime</Item>
+                  <Item>EscalationResponseTime</Item>
+                  <Item>EscalationSolutionTime</Item>
+                  <Item>EscalationTimeWorkingTime</Item>
+                  <Item>EscalationTime</Item>
+                  <Item>EscalationUpdateTime</Item>
+                  <Item>FileID</Item>
+                  <Item>FilesizeRaw</Item>
+                  <Item>FirstResponseTimeDestinationTime</Item>
+                  <Item>FirstResponseTimeEscalation</Item>
+                  <Item>FirstResponseTimeWorkingTime</Item>
+                  <Item>FirstResponseTime</Item>
+                  <Item>GroupID</Item>
+                  <Item>HasWatch</Item>
+                  <Item>ID</Item>
+                  <Item>IncomingTime</Item>
+                  <Item>IsVisibleForCustomer</Item>
+                  <Item>LinkCount</Item>
+                  <Item>LockID</Item>
+                  <Item>NeedTokenUpdate</Item>
+                  <Item>OnTicketCreateScreen</Item>
+                  <Item>OwnerID</Item>
+                  <Item>PriorityID</Item>
+                  <Item>QueueID</Item>
+                  <Item>RealTillTimeNotUsed</Item>
+                  <Item>ResponsibleID</Item>
+                  <Item>Seen</Item>
+                  <Item>SenderTypeID</Item>
+                  <Item>ServiceID</Item>
+                  <Item>SLAID</Item>
+                  <Item>SolutionTimeDestinationTime</Item>
+                  <Item>SolutionTimeEscalation</Item>
+                  <Item>SolutionTimeWorkingTime</Item>
+                  <Item>SolutionTime</Item>
+                  <Item>StateID</Item>
+                  <Item>TicketID</Item>
+                  <Item>TypeID</Item>
+                  <Item>UnlockTimeout</Item>
+                  <Item>UntilTimeDateUnix</Item>
+                  <Item>UntilTime</Item>
+                  <Item>UpdateTimeDestinationTime</Item>
+                  <Item>UpdateTimeEscalation</Item>
+                  <Item>UpdateTimeWorkingTime</Item>
+                  <Item>UpdateTime</Item>
+                  <Item>UserChangeOverviewSmallPageShown</Item>
+                  <Item>UserConfigItemOverviewSmallPageShown</Item>
+                  <Item>UserFAQJournalOverviewSmallPageShown</Item>
+                  <Item>UserFAQOverviewSmallPageShown</Item>
+                  <Item>UserID</Item>
+                  <Item>UserLastLogin</Item>
+                  <Item>UserLoginFailed</Item>
+                  <Item>UserRefreshTime</Item>
+                  <Item>UserSurveyOverviewSmallPageShown</Item>
+                  <Item>UserTicketOverviewMediumPageShown</Item>
+                  <Item>UserTicketOverviewPreviewPageShown</Item>
+                  <Item>UserTicketOverviewSmallPageShown</Item>
+                  <Item>ValidID</Item>
+                  <Item>WatcherCount</Item>
+              </Array>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::API::ObjectType###Date" Required="0" Valid="1">
+        <Description Translatable="1">Type of object fields.</Description>
+        <Navigation>RS_API::Internal</Navigation>
+        <Value>
+              <Array>
+                  <Item>ChangeTime</Item>
+                  <Item>ChangeTimeServer</Item>
+                  <Item>Changed</Item>
+                  <Item>ChangedServer</Item>
+                  <Item>CreateTime</Item>
+                  <Item>CreateTimeServer</Item>
+                  <Item>Created</Item>
+                  <Item>CreatedServer</Item>
+                  <Item>EscalationDestinationDate</Item>
+                  <Item>EscalationDestinationDateServer</Item>
+                  <Item>SolutionTimeDestinationDate</Item>
+                  <Item>SolutionTimeDestinationDateServer</Item>
+                  <Item>UpdateTimeDestinationDate</Item>
+                  <Item>UpdateTimeDestinationDateServer</Item>
+                  <Item>UserLastLoginTimestamp</Item>
+                  <Item>UntilTimeDate</Item>
+              </Array>
+        </Value>
+    </Setting>
+
+    <Setting Name="AutoloadPerlPackages###1100-RS_TicketSearch" Required="1" Valid="1">
+        <Description Translatable="1">TicketSearch autoload.</Description>
+        <Navigation>Core::Autoload</Navigation>
+        <Value>
+            <Array>
+                <Item ValueType="String">Kernel::Autoload::RS_TicketSearch</Item>
+            </Array>
+        </Value>
+    </Setting>
+
+    <Setting Name="Package::EventModulePost###1600-CheckInstalledPackage" Required="0" Valid="1">
+        <Description Translatable="1">Check installed package</Description>
+        <Navigation>Core::Event::Package</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::CheckInstalledPackage</Item>
+                <Item Key="Event">PackageInstall|PackageUpgrade|PackageReinstall|PackageUninstall</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS:API::Ticket::MobileScreen::DynamicFields###AgentMobileTicketNote" Required="1" Valid="1">
+        <Description Translatable="1">Dynamic fields list with their permissions for mobile applications screens</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+                <DefaultItem ValueType="Select">
+                    <Item ValueType="Option" Value="r" Translatable="1">Read only</Item>
+                    <Item ValueType="Option" Value="w" Translatable="1">Write only</Item>
+                    <Item ValueType="Option" Value="rw" Translatable="1">Read and write</Item>
+                </DefaultItem>
+                <Item Key="ABC" SelectedID="r"></Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="RS:API::Ticket::MobileScreen::DynamicFields###AgentMobileNewTicket" Required="1" Valid="1">
+        <Description Translatable="1">Dynamic fields list with their permissions for mobile applications screens</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+                <DefaultItem ValueType="Select">
+                    <Item ValueType="Option" Value="r" Translatable="1">Read only</Item>
+                    <Item ValueType="Option" Value="w" Translatable="1">Write only</Item>
+                    <Item ValueType="Option" Value="rw" Translatable="1">Read and write</Item>
+                </DefaultItem>
+                <Item Key="ABC" SelectedID="rw"></Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="RS:API::Ticket::MobileScreen::DynamicFields###AgentMobileTicketClose" Required="1" Valid="1">
+        <Description Translatable="1">Dynamic fields list with their permissions for mobile applications screens</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+                <DefaultItem ValueType="Select">
+                    <Item ValueType="Option" Value="r" Translatable="1">Read only</Item>
+                    <Item ValueType="Option" Value="w" Translatable="1">Write only</Item>
+                    <Item ValueType="Option" Value="rw" Translatable="1">Read and write</Item>
+                </DefaultItem>
+                <Item Key="ABC" SelectedID="rw"></Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="RS:API::Ticket::MobileScreen::DynamicFields###AgentMobileTicketStatus" Required="1" Valid="1">
+        <Description Translatable="1">Dynamic fields list with their permissions for mobile applications screens</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+                <DefaultItem ValueType="Select">
+                    <Item ValueType="Option" Value="r" Translatable="1">Read only</Item>
+                    <Item ValueType="Option" Value="w" Translatable="1">Write only</Item>
+                    <Item ValueType="Option" Value="rw" Translatable="1">Read and write</Item>
+                </DefaultItem>
+                <Item Key="ABC" SelectedID="rw"></Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="RS:API::Ticket::MobileScreen::DynamicFields###AgentMobileEditTicket" Required="1" Valid="1">
+        <Description Translatable="1">Dynamic fields list with their permissions for mobile applications screens</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+                <DefaultItem ValueType="Select">
+                    <Item ValueType="Option" Value="r" Translatable="1">Read only</Item>
+                    <Item ValueType="Option" Value="w" Translatable="1">Write only</Item>
+                    <Item ValueType="Option" Value="rw" Translatable="1">Read and write</Item>
+                </DefaultItem>
+                <Item Key="ABC" SelectedID="rw"></Item>
+            </Hash>
+        </Value>
+    </Setting>
+</otrs_config>
