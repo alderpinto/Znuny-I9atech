@@ -14,6 +14,8 @@ use warnings;
 
 use Kernel::System::VariableCheck qw(IsHashRefWithData);
 
+our $ObjectManagerDisabled = 1;
+
 {
     no warnings 'redefine';
 

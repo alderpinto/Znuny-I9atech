@@ -1,0 +1,31 @@
+---
+Debugger:
+  DebugThreshold: debug
+  TestMode: '0'
+Description: ''
+FrameworkVersion: 6.0.10
+Provider:
+  Transport:
+    Type: ''
+RemoteSystem: ''
+Requester:
+  Invoker:
+    Notify:
+      Description: ''
+      Events:
+      - Asynchronous: '1'
+        Event: PushEvent
+      MappingInbound: {}
+      MappingOutbound: {}
+      Type: RS::PushNotify
+  Transport:
+    Config:
+      DefaultCommand: POST
+      Headers:
+        Authorization: key=AAAAZ7rFI6Q:APA91bFqHlOwyjeD9ntk2jc5oPxoKMRZM_LmLMLpPjIoNk7K7lVG9SpTJHxQkLfHj85s_AzDdIv0QxoeQeVD5i43UGYRzZS55ElKkTGBAMzib9uWBj2biIqeq_nF5Lp24-Rgtww8HP5O
+      Host: https://fcm.googleapis.com
+      InvokerControllerMapping:
+        Notify:
+          Controller: /fcm/send
+      Timeout: '120'
+    Type: HTTP::REST_RS

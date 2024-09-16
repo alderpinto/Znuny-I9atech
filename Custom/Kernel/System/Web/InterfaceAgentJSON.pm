@@ -83,6 +83,32 @@ sub new {
         },
     );
 
+    # get needed objects
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+    my $MainObject   = $Kernel::OM->Get('Kernel::System::Main');
+
+    # load ticket extension modules
+    my $CustomModule = $ConfigObject->Get('Ticket::CustomModule');
+    if ($CustomModule) {
+
+        my %ModuleList;
+        if ( ref $CustomModule eq 'HASH' ) {
+            %ModuleList = %{$CustomModule};
+        }
+        else {
+            $ModuleList{Init} = $CustomModule;
+        }
+
+        MODULEKEY:
+        for my $ModuleKey ( sort keys %ModuleList ) {
+
+            my $Module = $ModuleList{$ModuleKey};
+
+            next MODULEKEY if !$Module;
+            next MODULEKEY if !$MainObject->RequireBaseClass($Module);
+        }
+    }
+
     # debug info
     if ( $Self->{Debug} ) {
         $Kernel::OM->Get('Kernel::System::Log')->Log(

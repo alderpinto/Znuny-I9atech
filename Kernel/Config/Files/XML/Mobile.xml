@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Application">
+
+    <Setting Name="Notification::Transport###PushNotification" Required="0" Valid="1">
+        <Description Translatable="1">Defines all the parameters for this notification transport.</Description>
+        <Navigation>Frontend::Admin::AdminNotificationEvent</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Module">Kernel::System::Ticket::Event::NotificationEvent::Transport::PushNotification</Item>
+                <Item Key="Name" Translatable="1">Push Notification</Item>
+                <Item Key="Icon">fa fa-mobile</Item>
+                <Item Key="Prio">120</Item>
+                <Item Key="IsOTRSBusinessTransport">0</Item>
+                <Item Key="AgentEnabledByDefault">1</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="GenericInterface::Invoker::Module###RS::PushNotify" Required="0" Valid="1">
+        <Description Translatable="1">GenericInterface module registration</Description>
+        <Navigation>GenericInterface::Invoker::ModuleRegistration</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Name">PushNotify</Item>
+                <Item Key="Controller">RS</Item>
+                <Item Key="ConfigDialog">AdminGenericInterfaceInvokerDefault</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="GenericInterface::Transport::Module###HTTP::REST_RS" Required="0" Valid="1">
+        <Description Translatable="1">GenericInterface module registration for the transport layer.</Description>
+        <Navigation>GenericInterface::Transport::ModuleRegistration</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Name">REST_RS</Item>
+                <Item Key="Protocol">HTTP</Item>
+                <Item Key="ConfigDialog">AdminGenericInterfaceTransportHTTPREST_RS</Item>
+            </Hash>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AdminGenericInterfaceTransportHTTPREST_RS" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the agent interface.</Description>
+        <Navigation>Frontend::Admin::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                            <Item>admin</Item>
+                        </Array>
+                    </Item>
+                    <Item Key="CSS">
+                        <Array>
+                            <Item>Core.Agent.Admin.GenericInterface.css</Item>
+                        </Array>
+                    </Item>
+                    <Item Key="Description">Admin</Item>
+                    <Item Key="Title" Translatable="1">GenericInterface TransportHTTPREST_RS GUI</Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::State::Color" Required="1" Valid="1">
+        <Description Translatable="1">Color settings of Ticket State</Description>
+        <Navigation>RS_Mobile::Color</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DEFAULT">#b3b3b3</Item>
+                <Item Key="new">#ffffff</Item>
+                <Item Key="open">#5bb8a5</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::State::BackgroundColor" Required="1" Valid="1">
+        <Description Translatable="1">Background color settings of Ticket State</Description>
+        <Navigation>RS_Mobile::Color</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DEFAULT">#ffffff</Item>
+                <Item Key="new">#5bb8a5</Item>
+                <Item Key="open">#ffffff</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::Priority::Color" Required="1" Valid="1">
+        <Description Translatable="1">Color settings of Ticket Priority</Description>
+        <Navigation>RS_Mobile::Color</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DEFAULT">#b3b3b3</Item>
+                <Item Key="1 very low">#1e0000</Item>
+                <Item Key="2 low">#b7b7b7</Item>
+                <Item Key="3 normal">#5bb8a5</Item>
+                <Item Key="4 high">#f9a46c</Item>
+                <Item Key="5 very high">#f86868</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::Type::Color" Required="1" Valid="1">
+        <Description Translatable="1">Color settings of Ticket Type</Description>
+        <Navigation>RS_Mobile::Color</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DEFAULT">#b3b3b3</Item>
+                <Item Key="Problem">#ffffff</Item>
+                <Item Key="Incident">#5bb8a5</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::Type::BackgroundColor" Required="1" Valid="1">
+        <Description Translatable="1">Background color settings of Ticket Type</Description>
+        <Navigation>RS_Mobile::Color</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="DEFAULT">#b3b3b3</Item>
+                <Item Key="Problem">#eeeeee</Item>
+                <Item Key="Incident">#889988</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="RS::Mobile::Type::Abbr" Required="1" Valid="1">
+        <Description Translatable="1">Abbr settings of Ticket Type</Description>
+        <Navigation>RS_API::Main</Navigation>
+        <Value>
+            <Hash>
+              <Item Key="Problem">PRB</Item>
+              <Item Key="Incident">INC</Item>
+            </Hash>
+        </Value>
+    </Setting>
+
+    <Setting Name="Frontend::Module###AgentMobileEditTicket" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the mobile app interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="Title" Translatable="1"></Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentMobileNewTicket" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the mobile app interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="Title" Translatable="1"></Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentMobileTicketClose" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the mobile app interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="Title" Translatable="1"></Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentMobileTicketNote" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the mobile app interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="Title" Translatable="1"></Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+    <Setting Name="Frontend::Module###AgentMobileTicketStatus" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the mobile app interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
+        <Value>
+            <Item ValueType="FrontendRegistration">
+                <Hash>
+                    <Item Key="Group">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="GroupRo">
+                        <Array>
+                        </Array>
+                    </Item>
+                    <Item Key="Description" Translatable="1"></Item>
+                    <Item Key="Title" Translatable="1"></Item>
+                    <Item Key="NavBarName"></Item>
+                </Hash>
+            </Item>
+        </Value>
+    </Setting>
+
+    <Setting Name="Ticket::Frontend::AgentMobileEditTicket###StateType" Required="1" Valid="1">
+        <Description Translatable="1"></Description>
+        <Navigation>Frontend::Agent::View::MobileApp</Navigation>
+        <Value>
+            <Array>
+                <Item Translatable="1">new</Item>
+                <Item Translatable="1">open</Item>
+                <Item Translatable="1">closed</Item>
+                <Item Translatable="1">pending auto</Item>
+                <Item Translatable="1">pending reminder</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Ticket::Frontend::AgentMobileNewTicket###StateType" Required="1" Valid="1">
+        <Description Translatable="1"></Description>
+        <Navigation>Frontend::Agent::View::MobileApp</Navigation>
+        <Value>
+            <Array>
+                <Item Translatable="1">new</Item>
+                <Item Translatable="1">open</Item>
+                <Item Translatable="1">closed</Item>
+                <Item Translatable="1">pending auto</Item>
+                <Item Translatable="1">pending reminder</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Ticket::Frontend::AgentMobileTicketClose###StateType" Required="1" Valid="1">
+        <Description Translatable="1"></Description>
+        <Navigation>Frontend::Agent::View::MobileApp</Navigation>
+        <Value>
+            <Array>
+                <Item Translatable="1">new</Item>
+                <Item Translatable="1">open</Item>
+                <Item Translatable="1">closed</Item>
+                <Item Translatable="1">pending auto</Item>
+                <Item Translatable="1">pending reminder</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Ticket::Frontend::AgentMobileTicketNote###StateType" Required="1" Valid="1">
+        <Description Translatable="1"></Description>
+        <Navigation>Frontend::Agent::View::MobileApp</Navigation>
+        <Value>
+            <Array>
+                <Item Translatable="1">new</Item>
+                <Item Translatable="1">open</Item>
+                <Item Translatable="1">closed</Item>
+                <Item Translatable="1">pending auto</Item>
+                <Item Translatable="1">pending reminder</Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Ticket::Frontend::AgentMobileTicketStatus###StateType" Required="1" Valid="1">
+        <Description Translatable="1"></Description>
+        <Navigation>Frontend::Agent::View::MobileApp</Navigation>
+        <Value>
+            <Array>
+                <Item Translatable="1">new</Item>
+                <Item Translatable="1">open</Item>
+                <Item Translatable="1">closed</Item>
+                <Item Translatable="1">pending auto</Item>
+                <Item Translatable="1">pending reminder</Item>
+            </Array>
+        </Value>
+    </Setting>
+</otrs_config>
